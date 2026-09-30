@@ -10,9 +10,10 @@
     ],
     "homepage": "https://ihub.pe/",
     "license": "Apache-2.0",
-    "authors": [Milagros M. Torres Vásquez
+    "authors": [
         {
-            "name": "IHUB",
+            "name": "Milagros M. Torres Vásquez"
+        {",
             "email": "milatova423@gmail.com"
         }
     ],
