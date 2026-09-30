@@ -1,25 +1,29 @@
 {
-    "name": "ihub/facturacion-electronica",
-    "description": "Facturación Electrónica SUNAT en Perú - IHUB",
+    "name": "greenter/greenter",
+    "description": "Facturacion Electrónica SUNAT en Perú",
     "keywords": [
         "facturacion-electronica",
         "sunat",
         "peru",
-        "ihub",
         "greenter"
     ],
-    "homepage": "https://ihub.pe/",
-    "license": "Apache-2.0",
+    "homepage": "https://greenter.dev/",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Milagros M. Torres Vásquez"
-        {",
-            "email": "milatova423@gmail.com"
+            "name": "Giancarlos Salas",
+            "email": "giansalex@gmail.com"
         }
     ],
     "support": {
-        "email":  "milatova423@gmail.com"
+        "forum": "https://community.greenter.dev/"
     },
+    "funding": [
+        {
+            "type": "yape",
+            "url": "https://yape.greenter.dev/"
+        }
+    ],
     "require": {
         "php": ">=7.4",
         "bacon/bacon-qr-code": "^2.0||^3.0",
@@ -45,12 +49,12 @@
     },
     "autoload": {
         "psr-4": {
-            "IHUB\\": [
+            "Greenter\\": [
                 "packages/core/src/Core/",
                 "packages/cpe-validator/src/",
                 "packages/data/src/",
                 "packages/htmltopdf/src/",
-                "packages/lite/src/IHUB/",
+                "packages/lite/src/Greenter/",
                 "packages/report/src/",
                 "packages/validator/src/",
                 "packages/ws/src/",
@@ -65,12 +69,45 @@
             "Tests\\": [
                 "packages/lite/tests/",
                 "tests/"
+            ],
+            "Tests\\Greenter\\": [
+                "packages/cpe-validator/tests/",
+                "packages/htmltopdf/tests/",
+                "packages/report/tests/",
+                "packages/validator/tests/",
+                "packages/ws/tests/",
+                "packages/xcodes/tests/",
+                "packages/xml-parser/tests/",
+                "packages/xml/tests/"
+            ],
+            "GreenTools\\Monorepo\\": [
+                "tools/monorepo"
             ]
         }
+    },
+    "replace": {
+        "greenter/core": "self.version",
+        "greenter/cpe-validator": "self.version",
+        "greenter/data": "self.version",
+        "greenter/htmltopdf": "self.version",
+        "greenter/lite": "self.version",
+        "greenter/report": "self.version",
+        "greenter/validator": "self.version",
+        "greenter/ws": "self.version",
+        "greenter/xcodes": "self.version",
+        "greenter/xml": "self.version",
+        "greenter/xml-parser": "self.version"
     },
     "scripts": {
         "test": "phpunit",
         "lint": "phpstan analyse",
         "lint:ci": "phpstan analyse --error-format=github"
+    },
+    "config": {
+        "policy": {
+            "advisories": {
+                "ignore": ["twig/twig"]
+            }
+        }
     }
 }
